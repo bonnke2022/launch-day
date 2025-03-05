@@ -48,7 +48,7 @@ const Countdown = () => {
           <h1 className="lg:text-5xl text-3xl font-bold">
             {String(value).padStart(2, "0")}
           </h1>
-          <p className="uppercase text-white bg-purple-900 py-2 px-4 md:px-4 lg:px-6 text-sm rounded-md">
+          <p className="uppercase text-purple-700 font-extrabold bg-white py-2 px-4 md:px-4 lg:px-6 text-sm rounded-md">
             {key}
           </p>
         </div>

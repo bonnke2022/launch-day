@@ -4,6 +4,7 @@ import "./globals.css";
 import Favicon from "@/public/SCTP1.png";
 import { Toaster } from "sonner";
 import Providers from "./provider";
+import Preloader from "./loading";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -27,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${playfair.variable}`}>
+        <Preloader />
         <Providers>{children}</Providers>
         <Toaster />
       </body>

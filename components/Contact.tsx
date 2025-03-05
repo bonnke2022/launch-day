@@ -73,7 +73,7 @@ const Contact = () => {
         <Button
           type="submit"
           variant="default"
-          className="cursor-pointer bg-white text-[#333] font-bold rounded-l-none rounded-r-sm py-6 px-4"
+          className="cursor-pointer bg-white text-[#333] hover:bg-purple-700 hover:text-white font-bold rounded-l-none rounded-r-sm py-6 px-4"
         >
           Get notified
         </Button>

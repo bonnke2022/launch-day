@@ -1,27 +1,47 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 
-const Loading = () => {
-  const [loading, setLoading] = useState(true);
+export default function Preloader() {
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2500); // Adjust time if needed
-
+    // Simulate loading process
+    const timer = setTimeout(() => setIsLoading(false), 3000);
     return () => clearTimeout(timer);
   }, []);
 
-  if (!loading) return null;
-
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black text-white z-50">
-      <div className="animate-pulse text-3xl font-bold tracking-wider">
-        Selmcorp is Loading...
-      </div>
-    </div>
-  );
-};
+    <AnimatePresence>
+      {isLoading && (
+        <motion.div
+          className="fixed inset-0 flex flex-col items-center justify-center bg-dark text-white z-50"
+          initial={{ opacity: 1 }}
+          exit={{ opacity: 0, transition: { duration: 0.75 } }}
+        >
+          {/* Spinner Animation */}
+          <motion.div
+            className="w-16 h-16 border-4 border-white border-t-transparent rounded-full"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+          />
 
-export default Loading;
+          {/* Loading Text */}
+          <motion.p
+            className="mt-4 text-xl font-semibold"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              duration: 0.5,
+              repeat: Infinity,
+              repeatType: "reverse",
+            }}
+          >
+            Loading...
+          </motion.p>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
