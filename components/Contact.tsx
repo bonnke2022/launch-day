@@ -63,7 +63,7 @@ const Contact = () => {
                 <Input
                   placeholder="Email address"
                   {...field}
-                  className="bg-gray-800 py-6 px-4 rounded-l-sm rounded-r-none outline-none focus:outline-none focus:ring-0 focus:border-transparent"
+                  className="bg-gray-500 text-white py-5 px-4 rounded-l-sm rounded-r-none focus:outline-none focus:ring-0 focus:border-transparent"
                 />
               </FormControl>
               <FormMessage />
@@ -73,7 +73,7 @@ const Contact = () => {
         <Button
           type="submit"
           variant="default"
-          className="cursor-pointer bg-white text-[#333] hover:bg-purple-700 hover:text-white font-bold rounded-l-none rounded-r-sm py-6 px-4"
+          className="cursor-pointer bg-white text-[#333] hover:bg-purple-900 hover:border-purple-900 hover:text-white font-bold rounded-l-none rounded-r-sm py-5 border-y-2 border-white px-4"
         >
           Get notified
         </Button>
