@@ -42,7 +42,6 @@ const Contact = () => {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     mutate(values);
-    form.reset();
   }
 
   const form = useForm<CreateSelmType>({
